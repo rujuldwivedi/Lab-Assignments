@@ -1,0 +1,90 @@
+import java.util.*;
+import java.io.*;
+public class SPI
+{
+    public static void main (String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int i;
+        double sumc = 0.0;
+        double sumg = 0.0;
+        System.out.println("Enter the number of courses");
+        int n=sc.nextInt();
+        String g[] = new String [n];
+        int c[] = new int [n];
+        int g1[] = new int [n];
+        for(i=0;i<n;i++)
+        {
+            System.out.println("Enter the credit for Course " + (i+1));
+            c[i] = sc.nextInt();
+            System.out.println("Enter the grade for Course " + (i+1));
+            g[i] = sc.next();
+        }
+        for(i=0;i<n;i++)
+        {
+            if(g[i].equals("A+"))
+            {
+                g1[i]=10;
+            }
+            else if(g[i].equals("A"))
+            {
+                g1[i]=9;
+            }
+            else if(g[i].equals("B+"))
+            {
+                g1[i]=8;
+            }
+            else if(g[i].equals("B"))
+            {
+                g1[i]=7;
+            }
+            else if(g[i].equals("C+"))
+            {
+                g1[i]=6;
+            }
+            else if(g[i].equals("C"))
+            {
+                g1[i]=5;
+            }
+            else if(g[i].equals("D"))
+            {
+                g1[i]=4;
+            }
+            else if(g[i].equals("F"))
+            {
+                g1[i]=0;
+            }
+            else if(g[i].equals("P"))
+            {
+                g1[i]=0;
+                c[i]=0;
+            }
+            else if(g[i].equals("NP"))
+            {
+                g1[i]=0;
+            }
+            else
+            {
+                System.out.println("Invalid Grade");
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+        sumc+=c[i];
+        sumg+=(g1[i]*c[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        System.out.println("Course no. \t\t\t Credit \t\t\t Grade");
+        System.out.println((i+1)+" \t\t\t\t "+c[i]+" \t\t\t\t "+g[i]);
+    }
+    double spi=(sumg/sumc);
+        double spi1=(spi*100);
+        double spi2=(Math.round(spi1));
+        int spi3=(int) spi2;
+        int a=spi3/100;
+        int b=spi3%100;
+        
+    System.out.println("Your SPI is "+a+"."+b);
+    }
+}
