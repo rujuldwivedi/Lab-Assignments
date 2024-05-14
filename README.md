@@ -1,4 +1,4 @@
-# LabAssgn Repository
+# Lab Assignments
 
 Welcome to the LabAssgn repository! This repository contains lab assignments and projects for various courses. Below is a detailed overview of the contents of this repository.
 
